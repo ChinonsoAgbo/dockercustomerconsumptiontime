@@ -1,6 +1,5 @@
 package org.example;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.result.CalculateUserTime;
 import org.example.result.Result;
@@ -12,7 +11,7 @@ import java.net.URL;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
         try {
             // Calculate user time and retrieve the result
@@ -26,8 +25,10 @@ public class Main {
             // Print the JSON result
             System.out.println("JSON Result: " + jsonResult);
 
+            // Replace "http://localhost:8080" with your actual base URL
+
             // Prepare HTTP connection
-            URL url = new URL("http://localhost:8080/v1/result");
+            URL url = new URL("http://server:8080/v1/result");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
             // Set the request method to POST
@@ -46,12 +47,10 @@ public class Main {
 
             // Handle the response
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                System.out.println("Check what response : " + responseCode);
-
+                System.out.println("Check what response: " + responseCode);
             } else {
                 System.out.println(responseCode);
-
-                System.out.println("Run the docker-compose up to start this container !");
+                System.out.println("Run the docker-compose up to start this container!");
             }
 
             // Close the connection

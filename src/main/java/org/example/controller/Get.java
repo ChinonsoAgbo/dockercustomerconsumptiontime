@@ -14,8 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Get {
-    // Your URL here
-    private final String apiUrl = "http://localhost:8080/v1/dataset";
+    // Replace "http://localhost:8080" with your actual base URL
+    private final String baseUrl = "http://server:8080";
+    private final String apiUrl = "http://server:8080/v1/dataset";
 
     /**
      * Retrieves a list of events from an external service.
